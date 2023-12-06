@@ -33,7 +33,7 @@ getMaximums game = extractVals game initMax
           (updateMax (getMax num c m) c m)
         Nothing                           -> m
 
-getPower m = product [red m, blue m, green m]
+getPower m = product $ [red, blue, green] <*> [m]
 
 main = do
   input <- lines <$> readFile "./input"
